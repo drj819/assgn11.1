@@ -1,0 +1,44 @@
+Assignment 11.1
+
+(a)
+
+getwd()
+
+p='C:/Users/Admin/Documents/acd'
+setwd(p)
+list.files()
+
+list.dirs()
+library(data.table)
+data=read.table("bank.csv", header=T, sep=',')
+
+View(data)
+
+read.csv("bank.csv",header=T,sep=",")
+
+
+library(readr)
+bank_full <- read_delim("C:/Users/Admin/Documents/acd/bank.csv", 
+                        ";", escape_double = FALSE, trim_ws = TRUE)
+
+head(bank_full)
+str(bank_full) 
+summary(bank_full)
+
+
+(b)
+library(ggplot2)
+ggplot(bank-additiona-full, aes(x=job, y=age, fill=job)) + 
+  geom_boxplot(alpha=0.3) +
+  theme(legend.position="none")+
+  ggtitle("Distribution of age based on a Job")
+
+
+(c)
+chisq.test(bank.additional$job ,bank.additional$marital)
+There is relation between job and maritial status
+
+
+(d)
+chisq.test(bank.additional$job ,bank.additional$education)
+There is association between job and education
